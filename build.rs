@@ -1,7 +1,6 @@
 use lazy_static::lazy_static;
 use regex::Regex;
 use std::env;
-use std::io::Read;
 use std::path::{Path, PathBuf};
 
 fn main() {
@@ -101,7 +100,7 @@ fn main() {
         r#"#![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
-            
+
 {}"#,
         buf
     );
@@ -136,7 +135,8 @@ fn replace_trait(fname: &Path, traits: &[&str]) -> Result<String, Box<dyn std::e
         let mut traitfuns = vec![];
         assert!(
             pattern.captures(&buf).is_some(),
-            format!("`{}` not found in source code", trait_extern)
+            "`{}` not found in source code",
+            trait_extern
         );
         for cap in pattern.captures_iter(&buf) {
             let fname = cap.get(1).unwrap().as_str().trim();
