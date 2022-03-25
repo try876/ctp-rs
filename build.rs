@@ -64,6 +64,7 @@ fn main() {
         // Tell cargo to invalidate the built crate whenever any of the
         // included header files changed.
         .derive_debug(true)
+        .derive_default(true)
         // make output smaller
         .layout_tests(false)
         .generate_comments(false)
