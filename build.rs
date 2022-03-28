@@ -80,13 +80,14 @@ fn main() {
         // Unwrap the Result and panic on failure.
         .expect("Unable to generate bindings");
 
+    let output = bindings.to_string().replace("u8", "i8");
+
     // Write the bindings to the $OUT_DIR/bindings.rs file.
     let outdir = PathBuf::from("src").join("generated");
     std::fs::create_dir_all(outdir).expect("Couldn't create dir generated!");
     let outfile = PathBuf::from("src").join("generated/mod.rs");
-    bindings
-        .write_to_file(&outfile)
-        .expect("Couldn't write bindings!");
+
+    std::fs::write(&outfile, &output).expect("Couldn't write bindings!");
 
     let mut buf = replace_trait(
         &outfile,
