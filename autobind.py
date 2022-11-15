@@ -95,7 +95,7 @@ class {rust_name} {{
 
 {impls_repl}
 """
-        print(cdef)
+        return(cdef)
 
     # 产生cpp代码，同时生成对应的rust代码
     def forward_to_rust(self, meta: Dict[str, 'ClsAst']):
@@ -133,7 +133,7 @@ extern "C" void {rust_name}_Trait_Drop(void* m_rust);
 {rust_name}::~{rust_name}() {{ {rust_name}_Trait_Drop(m_rust); }}
 """
 
-        print(cdef)
+        return(cdef)
 
 class ClsF:
     def __init__(self, rtn, name, args, decl, comments):
@@ -217,23 +217,33 @@ def port_ctp_td():
     meta = {}
     walk_hpp(open("./shared/include/ThostFtdcTraderApi.h", encoding="gbk").read(), meta)
 
-    c1 = meta["CThostFtdcTraderApi"]
-    c1.member_to_rust(meta, is_m_member_owned=False)
+    with open("./src/ctptd.cpp", "w", encoding="utf-8") as file: 
+        file.writelines(["#include \"../shared/include/ThostFtdcTraderApi.h\""])
 
-    c2 = meta["CThostFtdcTraderSpi"]
-    c2.forward_to_rust(meta)
+        c1 = meta["CThostFtdcTraderApi"]
+        content = c1.member_to_rust(meta, is_m_member_owned=False)
+        file.write(content)
+
+        c2 = meta["CThostFtdcTraderSpi"]
+        content = c2.forward_to_rust(meta)
+        file.write(content)
 
 def port_ctp_md():
     meta = {}
     walk_hpp(open("./shared/include/ThostFtdcMdApi.h", encoding="gbk").read(), meta)
 
-    c1 = meta["CThostFtdcMdApi"]
-    c1.member_to_rust(meta, is_m_member_owned=False)
+    with open("./src/ctpmd.cpp", "w", encoding="utf-8") as file:
+        file.writelines(["#include \"../shared/include/ThostFtdcMdApi.h\""])
 
-    c2 = meta["CThostFtdcMdSpi"]
-    c2.forward_to_rust(meta)
+        c1 = meta["CThostFtdcMdApi"]
+        content = c1.member_to_rust(meta, is_m_member_owned=False)
+        file.write(content)
+
+        c2 = meta["CThostFtdcMdSpi"]
+        content = c2.forward_to_rust(meta)
+        file.write(content)
 
 
 if __name__ == "__main__":
     port_ctp_md()
-    # port_ctp_td()
+    port_ctp_td()

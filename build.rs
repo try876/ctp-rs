@@ -53,14 +53,14 @@ fn main() {
     println!("cargo:rustc-link-lib=dylib=thosttraderapi_se");
 
     // Tell cargo to invalidate the built crate whenever the wrapper changes
-    println!("cargo:rerun-if-changed=src/wrapper.hpp");
+    // println!("cargo:rerun-if-changed=src/wrapper.hpp"); // 2022.11.15 delete
     println!("cargo:rerun-if-changed=src/wrapper.cpp");
 
     // ctp api header is clean enough, we will use blacklist instead whitelist
     let bindings = bindgen::Builder::default()
         // The input header we would like to generate
         // bindings for.
-        .header("src/wrapper.hpp")
+        .header("src/wrapper.cpp")
         // Tell cargo to invalidate the built crate whenever any of the
         // included header files changed.
         .derive_debug(true)
