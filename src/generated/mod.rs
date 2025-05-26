@@ -64,6 +64,7 @@ pub const THOST_FTDC_FC_ParkedOrderInsert: i8 = 67i8;
 pub const THOST_FTDC_FC_ParkedOrderAction: i8 = 68i8;
 pub const THOST_FTDC_FC_SyncOTP: i8 = 69i8;
 pub const THOST_FTDC_FC_DeleteOrder: i8 = 70i8;
+pub const THOST_FTDC_FC_ExitEmergency: i8 = 71i8;
 pub const THOST_FTDC_BFC_ForceUserLogout: i8 = 49i8;
 pub const THOST_FTDC_BFC_UserPasswordUpdate: i8 = 50i8;
 pub const THOST_FTDC_BFC_SyncBrokerData: i8 = 51i8;
@@ -224,6 +225,9 @@ pub const THOST_FTDC_FCC_Violation: i8 = 53i8;
 pub const THOST_FTDC_FCC_Other: i8 = 54i8;
 pub const THOST_FTDC_FCC_PersonDeliv: i8 = 55i8;
 pub const THOST_FTDC_FCC_Notverifycapital: i8 = 56i8;
+pub const THOST_FTDC_FCC_LocalLackDeposit: i8 = 57i8;
+pub const THOST_FTDC_FCC_LocalViolationNocheck: i8 = 97i8;
+pub const THOST_FTDC_FCC_LocalViolation: i8 = 98i8;
 pub const THOST_FTDC_ORDT_Normal: i8 = 48i8;
 pub const THOST_FTDC_ORDT_DeriveFromQuote: i8 = 49i8;
 pub const THOST_FTDC_ORDT_DeriveFromCombination: i8 = 50i8;
@@ -284,6 +288,7 @@ pub const THOST_FTDC_IS_AuctionOrdering: i8 = 51i8;
 pub const THOST_FTDC_IS_AuctionBalance: i8 = 52i8;
 pub const THOST_FTDC_IS_AuctionMatch: i8 = 53i8;
 pub const THOST_FTDC_IS_Closed: i8 = 54i8;
+pub const THOST_FTDC_IS_TransactionProcessing: i8 = 55i8;
 pub const THOST_FTDC_IER_Automatic: i8 = 49i8;
 pub const THOST_FTDC_IER_Manual: i8 = 50i8;
 pub const THOST_FTDC_IER_Fuse: i8 = 51i8;
@@ -365,6 +370,10 @@ pub const THOST_FTDC_TPID_BalanceMorgage: i8 = 97i8;
 pub const THOST_FTDC_TPID_MinPwdLen: i8 = 79i8;
 pub const THOST_FTDC_TPID_LoginFailMaxNumForIP: i8 = 85i8;
 pub const THOST_FTDC_TPID_PasswordPeriod: i8 = 86i8;
+pub const THOST_FTDC_TPID_PwdHistoryCmp: i8 = 88i8;
+pub const THOST_FTDC_TPID_TranferChkProperty: i8 = 105i8;
+pub const THOST_FTDC_TPID_TradeChkPhase: i8 = 106i8;
+pub const THOST_FTDC_TPID_TradeChkPriceVol: i8 = 107i8;
 pub const THOST_FTDC_FI_SettlementFund: i8 = 70i8;
 pub const THOST_FTDC_FI_Trade: i8 = 84i8;
 pub const THOST_FTDC_FI_InvestorPosition: i8 = 80i8;
@@ -531,6 +540,7 @@ pub const THOST_FTDC_UET_Authenticate: i8 = 54i8;
 pub const THOST_FTDC_UET_SubmitSysInfo: i8 = 55i8;
 pub const THOST_FTDC_UET_Transfer: i8 = 56i8;
 pub const THOST_FTDC_UET_Other: i8 = 57i8;
+pub const THOST_FTDC_UET_UpdateTradingAccountPassword: i8 = 97i8;
 pub const THOST_FTDC_ICS_Close: i8 = 48i8;
 pub const THOST_FTDC_ICS_CloseToday: i8 = 49i8;
 pub const THOST_FTDC_SM_Non: i8 = 48i8;
@@ -1270,6 +1280,50 @@ pub const THOST_FTDC_OFCL_Product: i8 = 49i8;
 pub const THOST_FTDC_OFCL_Inst: i8 = 50i8;
 pub const THOST_FTDC_EBL_False: i8 = 48i8;
 pub const THOST_FTDC_EBL_True: i8 = 49i8;
+pub const THOST_FTDC_ETR_USUAL: i8 = 49i8;
+pub const THOST_FTDC_ETR_FNSP: i8 = 50i8;
+pub const THOST_FTDC_ETR_BNSP: i8 = 51i8;
+pub const THOST_FTDC_ETR_SPOT: i8 = 52i8;
+pub const THOST_FTDC_EPF_None: i8 = 48i8;
+pub const THOST_FTDC_EPF_SPBM: i8 = 49i8;
+pub const THOST_FTDC_EPF_RULE: i8 = 50i8;
+pub const THOST_FTDC_EPF_SPMM: i8 = 51i8;
+pub const THOST_FTDC_EPF_RCAMS: i8 = 52i8;
+pub const THOST_FTDC_WDPID_CashIn: i8 = 67i8;
+pub const THOST_FTDC_ITR_CloseOnly: i8 = 49i8;
+pub const THOST_FTDC_ITR_Forbidden: i8 = 50i8;
+pub const THOST_FTDC_IMID_BothSide: i8 = 49i8;
+pub const THOST_FTDC_IMID_MMSA: i8 = 50i8;
+pub const THOST_FTDC_IMID_SPMM: i8 = 51i8;
+pub const THOST_FTDC_ERComb_BUC: i8 = 48i8;
+pub const THOST_FTDC_ERComb_BEC: i8 = 49i8;
+pub const THOST_FTDC_ERComb_BEP: i8 = 50i8;
+pub const THOST_FTDC_ERComb_BUP: i8 = 51i8;
+pub const THOST_FTDC_ERComb_CAS: i8 = 52i8;
+pub const THOST_FTDC_EET_None: i8 = 48i8;
+pub const THOST_FTDC_EET_SPBM_AddOnHedge: i8 = 49i8;
+pub const THOST_FTDC_EIC_Usual: i8 = 49i8;
+pub const THOST_FTDC_EIC_Delivery: i8 = 50i8;
+pub const THOST_FTDC_EIC_NonComb: i8 = 51i8;
+pub const THOST_FTDC_PCF_None: i8 = 48i8;
+pub const THOST_FTDC_PCF_OnlyFrozen: i8 = 49i8;
+pub const THOST_FTDC_PCF_PositionChange: i8 = 50i8;
+pub const THOST_FTDC_PRS_Init: i8 = 48i8;
+pub const THOST_FTDC_PRS_Sync: i8 = 49i8;
+pub const THOST_FTDC_PRS_UserUpd: i8 = 50i8;
+pub const THOST_FTDC_PRS_SuperUserUpd: i8 = 51i8;
+pub const THOST_FTDC_PRS_SecUpd: i8 = 52i8;
+pub const THOST_FTDC_ASM_Trade: i8 = 48i8;
+pub const THOST_FTDC_ASM_MarketData: i8 = 49i8;
+pub const THOST_FTDC_ASM_Other: i8 = 50i8;
+pub const THOST_FTDC_ADV_V4: i8 = 48i8;
+pub const THOST_FTDC_ADV_V6: i8 = 49i8;
+pub const THOST_FTDC_TGQS_QryIdle: i8 = 49i8;
+pub const THOST_FTDC_TGQS_QryBusy: i8 = 50i8;
+pub const THOST_FTDC_OT_OPT_OFFSET: i8 = 48i8;
+pub const THOST_FTDC_OT_FUT_OFFSET: i8 = 49i8;
+pub const THOST_FTDC_OT_EXEC_OFFSET: i8 = 50i8;
+pub const THOST_FTDC_OT_PERFORM_OFFSET: i8 = 51i8;
 pub const THOST_TE_RESUME_TYPE_THOST_TERT_RESTART: THOST_TE_RESUME_TYPE = 0;
 pub const THOST_TE_RESUME_TYPE_THOST_TERT_RESUME: THOST_TE_RESUME_TYPE = 1;
 pub const THOST_TE_RESUME_TYPE_THOST_TERT_QUICK: THOST_TE_RESUME_TYPE = 2;
@@ -2034,6 +2088,7 @@ pub type TThostFtdcLongFBEBankAccountNameType = [::std::os::raw::c_char; 161usiz
 pub type TThostFtdcDateTimeType = [::std::os::raw::c_char; 17usize];
 pub type TThostFtdcWeakPasswordSourceType = ::std::os::raw::c_char;
 pub type TThostFtdcRandomStringType = [::std::os::raw::c_char; 17usize];
+pub type TThostFtdcOrderMemoType = [::std::os::raw::c_char; 13usize];
 pub type TThostFtdcOptSelfCloseFlagType = ::std::os::raw::c_char;
 pub type TThostFtdcBizTypeType = ::std::os::raw::c_char;
 pub type TThostFtdcAppTypeType = ::std::os::raw::c_char;
@@ -2075,6 +2130,41 @@ pub type TThostFtdcSysVersionType = [::std::os::raw::c_char; 41usize];
 pub type TThostFtdcOpenLimitControlLevelType = ::std::os::raw::c_char;
 pub type TThostFtdcOrderFreqControlLevelType = ::std::os::raw::c_char;
 pub type TThostFtdcEnumBoolType = ::std::os::raw::c_char;
+pub type TThostFtdcTimeRangeType = ::std::os::raw::c_char;
+pub type TThostFtdcDeltaType = f64;
+pub type TThostFtdcSpreadIdType = ::std::os::raw::c_int;
+pub type TThostFtdcPortfolioType = ::std::os::raw::c_char;
+pub type TThostFtdcPortfolioDefIDType = ::std::os::raw::c_int;
+pub type TThostFtdcWithDrawParamIDType = ::std::os::raw::c_char;
+pub type TThostFtdcWithDrawParamValueType = [::std::os::raw::c_char; 41usize];
+pub type TThostFtdcInvstTradingRightType = ::std::os::raw::c_char;
+pub type TThostFtdcThostFunctionCodeType = ::std::os::raw::c_int;
+pub type TThostFtdcSPMMDiscountRatioType = f64;
+pub type TThostFtdcSPMMModelDescType = [::std::os::raw::c_char; 129usize];
+pub type TThostFtdcSPMMModelIDType = [::std::os::raw::c_char; 33usize];
+pub type TThostFtdcSPMMProductIDType = [::std::os::raw::c_char; 41usize];
+pub type TThostFtdcInstMarginCalIDType = ::std::os::raw::c_char;
+pub type TThostFtdcProductIDType = [::std::os::raw::c_char; 41usize];
+pub type TThostFtdcHedgeRateType = f64;
+pub type TThostFtdcRCAMSPriorityType = ::std::os::raw::c_int;
+pub type TThostFtdcAdjustValueType = f64;
+pub type TThostFtdcRCAMSCombinationTypeType = ::std::os::raw::c_char;
+pub type TThostFtdcRuleIdType = [::std::os::raw::c_char; 51usize];
+pub type TThostFtdcPortfTypeType = ::std::os::raw::c_char;
+pub type TThostFtdcInstrumentClassType = ::std::os::raw::c_char;
+pub type TThostFtdcCommodityGroupIDType = ::std::os::raw::c_int;
+pub type TThostFtdcStdPositionType = f64;
+pub type TThostFtdcProdChangeFlagType = ::std::os::raw::c_char;
+pub type TThostFtdcPwdRcdSrcType = ::std::os::raw::c_char;
+pub type TThostFtdcAddrSrvModeType = ::std::os::raw::c_char;
+pub type TThostFtdcAddrVerType = ::std::os::raw::c_char;
+pub type TThostFtdcAddrRemarkType = [::std::os::raw::c_char; 161usize];
+pub type TThostFtdcAddrNameType = [::std::os::raw::c_char; 65usize];
+pub type TThostFtdcIpAddrType = [::std::os::raw::c_char; 129usize];
+pub type TThostFtdcTGSessionQryStatusType = ::std::os::raw::c_char;
+pub type TThostFtdcOffsetTypeType = ::std::os::raw::c_char;
+pub type TThostFtdcSiteType = [::std::os::raw::c_char; 51usize];
+pub type TThostFtdcNetOperatorType = [::std::os::raw::c_char; 9usize];
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct CThostFtdcDisseminationField {
@@ -2125,6 +2215,8 @@ pub struct CThostFtdcRspUserLoginField {
     pub INETime: TThostFtdcTimeType,
     pub SysVersion: TThostFtdcSysVersionType,
     pub GFEXTime: TThostFtdcTimeType,
+    pub LoginDRIdentityID: TThostFtdcDRIdentityIDType,
+    pub UserDRIdentityID: TThostFtdcDRIdentityIDType,
 }
 impl Default for CThostFtdcRspUserLoginField {
     fn default() -> Self {
@@ -2507,6 +2599,8 @@ pub struct CThostFtdcTraderField {
     pub InstallCount: TThostFtdcInstallCountType,
     pub BrokerID: TThostFtdcBrokerIDType,
     pub OrderCancelAlg: TThostFtdcOrderCancelAlgType,
+    pub TradeInstallCount: TThostFtdcInstallCountType,
+    pub MDInstallCount: TThostFtdcInstallCountType,
 }
 impl Default for CThostFtdcTraderField {
     fn default() -> Self {
@@ -3173,6 +3267,8 @@ pub struct CThostFtdcInputOrderField {
     pub MacAddress: TThostFtdcMacAddressType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcInputOrderField {
     fn default() -> Self {
@@ -3252,6 +3348,8 @@ pub struct CThostFtdcOrderField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub ExchangeInstID: TThostFtdcExchangeInstIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcOrderField {
     fn default() -> Self {
@@ -3364,6 +3462,8 @@ pub struct CThostFtdcInputOrderActionField {
     pub MacAddress: TThostFtdcMacAddressType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcInputOrderActionField {
     fn default() -> Self {
@@ -3408,6 +3508,8 @@ pub struct CThostFtdcOrderActionField {
     pub MacAddress: TThostFtdcMacAddressType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcOrderActionField {
     fn default() -> Self {
@@ -3625,6 +3727,7 @@ pub struct CThostFtdcSyncDepositField {
     pub CurrencyID: TThostFtdcCurrencyIDType,
     pub IsFromSopt: TThostFtdcBoolType,
     pub TradingPassword: TThostFtdcPasswordType,
+    pub IsSecAgentTranfer: TThostFtdcBoolType,
 }
 impl Default for CThostFtdcSyncDepositField {
     fn default() -> Self {
@@ -4159,6 +4262,7 @@ pub struct CThostFtdcQryDepthMarketDataField {
     pub reserve1: TThostFtdcOldInstrumentIDType,
     pub ExchangeID: TThostFtdcExchangeIDType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub ProductClass: TThostFtdcProductClassType,
 }
 impl Default for CThostFtdcQryDepthMarketDataField {
     fn default() -> Self {
@@ -5016,6 +5120,9 @@ pub struct CThostFtdcInputQuoteField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
     pub ReplaceSysID: TThostFtdcOrderSysIDType,
+    pub TimeCondition: TThostFtdcTimeConditionType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcInputQuoteField {
     fn default() -> Self {
@@ -5047,6 +5154,8 @@ pub struct CThostFtdcInputQuoteActionField {
     pub MacAddress: TThostFtdcMacAddressType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcInputQuoteActionField {
     fn default() -> Self {
@@ -5114,6 +5223,9 @@ pub struct CThostFtdcQuoteField {
     pub ExchangeInstID: TThostFtdcExchangeInstIDType,
     pub IPAddress: TThostFtdcIPAddressType,
     pub ReplaceSysID: TThostFtdcOrderSysIDType,
+    pub TimeCondition: TThostFtdcTimeConditionType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcQuoteField {
     fn default() -> Self {
@@ -5156,6 +5268,8 @@ pub struct CThostFtdcQuoteActionField {
     pub MacAddress: TThostFtdcMacAddressType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcQuoteActionField {
     fn default() -> Self {
@@ -5227,6 +5341,7 @@ pub struct CThostFtdcExchangeQuoteField {
     pub MacAddress: TThostFtdcMacAddressType,
     pub ExchangeInstID: TThostFtdcExchangeInstIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub TimeCondition: TThostFtdcTimeConditionType,
 }
 impl Default for CThostFtdcExchangeQuoteField {
     fn default() -> Self {
@@ -6841,6 +6956,8 @@ pub struct CThostFtdcBrokerUserEventField {
     pub InvestorID: TThostFtdcInvestorIDType,
     pub reserve1: TThostFtdcOldInstrumentIDType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub TradingDay: TThostFtdcDateType,
 }
 impl Default for CThostFtdcBrokerUserEventField {
     fn default() -> Self {
@@ -7214,6 +7331,8 @@ pub struct CThostFtdcErrOrderField {
     pub MacAddress: TThostFtdcMacAddressType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcErrOrderField {
     fn default() -> Self {
@@ -7347,6 +7466,8 @@ pub struct CThostFtdcErrOrderActionField {
     pub ErrorMsg: TThostFtdcErrorMsgType,
     pub InstrumentID: TThostFtdcInstrumentIDType,
     pub IPAddress: TThostFtdcIPAddressType,
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 impl Default for CThostFtdcErrOrderActionField {
     fn default() -> Self {
@@ -9641,6 +9762,7 @@ pub struct CThostFtdcDepartmentUserField {
 #[derive(Debug, Default, Copy, Clone)]
 pub struct CThostFtdcQueryFreqField {
     pub QueryFreq: TThostFtdcQueryFreqType,
+    pub FTDPkgFreq: TThostFtdcQueryFreqType,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -9789,7 +9911,7 @@ impl Default for CThostFtdcCombPromotionParamField {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct CThostFtdcReqUserLoginSCField {
+pub struct CThostFtdcReqUserLoginSMField {
     pub TradingDay: TThostFtdcDateType,
     pub BrokerID: TThostFtdcBrokerIDType,
     pub UserID: TThostFtdcUserIDType,
@@ -9799,13 +9921,16 @@ pub struct CThostFtdcReqUserLoginSCField {
     pub ProtocolInfo: TThostFtdcProtocolInfoType,
     pub MacAddress: TThostFtdcMacAddressType,
     pub OneTimePassword: TThostFtdcPasswordType,
-    pub ClientIPAddress: TThostFtdcIPAddressType,
+    pub reserve1: TThostFtdcOldIPAddressType,
     pub LoginRemark: TThostFtdcLoginRemarkType,
     pub ClientIPPort: TThostFtdcIPPortType,
+    pub ClientIPAddress: TThostFtdcIPAddressType,
+    pub BrokerName: TThostFtdcBrokerNameType,
     pub AuthCode: TThostFtdcAuthCodeType,
     pub AppID: TThostFtdcAppIDType,
+    pub PIN: TThostFtdcPasswordType,
 }
-impl Default for CThostFtdcReqUserLoginSCField {
+impl Default for CThostFtdcReqUserLoginSMField {
     fn default() -> Self {
         let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
         unsafe {
@@ -10426,6 +10551,2180 @@ impl Default for CThostFtdcSyncDeltaEWarrantOffsetField {
     }
 }
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPBMFutureParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Cvf: TThostFtdcVolumeMultipleType,
+    pub TimeRange: TThostFtdcTimeRangeType,
+    pub MarginRate: TThostFtdcRatioType,
+    pub LockRateX: TThostFtdcRatioType,
+    pub AddOnRate: TThostFtdcRatioType,
+    pub PreSettlementPrice: TThostFtdcPriceType,
+    pub AddOnLockRateX2: TThostFtdcRatioType,
+}
+impl Default for CThostFtdcSPBMFutureParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPBMOptionParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Cvf: TThostFtdcVolumeMultipleType,
+    pub DownPrice: TThostFtdcPriceType,
+    pub Delta: TThostFtdcDeltaType,
+    pub SlimiDelta: TThostFtdcDeltaType,
+    pub PreSettlementPrice: TThostFtdcPriceType,
+}
+impl Default for CThostFtdcSPBMOptionParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPBMIntraParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub IntraRateY: TThostFtdcRatioType,
+    pub AddOnIntraRateY2: TThostFtdcRatioType,
+}
+impl Default for CThostFtdcSPBMIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPBMInterParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub SpreadId: TThostFtdcSpreadIdType,
+    pub InterRateZ: TThostFtdcRatioType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcSPBMInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcSyncSPBMParameterEndField {
+    pub TradingDay: TThostFtdcDateType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPBMFutureParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQrySPBMFutureParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPBMOptionParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQrySPBMOptionParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPBMIntraParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQrySPBMIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPBMInterParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQrySPBMInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPBMPortfDefinitionField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub PortfolioDefID: TThostFtdcPortfolioDefIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub IsSPBM: TThostFtdcBoolType,
+}
+impl Default for CThostFtdcSPBMPortfDefinitionField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcSPBMInvestorPortfDefField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub PortfolioDefID: TThostFtdcPortfolioDefIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorPortfMarginRatioField {
+    pub InvestorRange: TThostFtdcInvestorRangeType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub MarginRatio: TThostFtdcRatioType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcInvestorPortfMarginRatioField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPBMPortfDefinitionField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub PortfolioDefID: TThostFtdcPortfolioDefIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQrySPBMPortfDefinitionField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcQrySPBMInvestorPortfDefField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorPortfMarginRatioField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcQryInvestorPortfMarginRatioField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorProdSPBMDetailField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub IntraInstrMargin: TThostFtdcMoneyType,
+    pub BCollectingMargin: TThostFtdcMoneyType,
+    pub SCollectingMargin: TThostFtdcMoneyType,
+    pub IntraProdMargin: TThostFtdcMoneyType,
+    pub NetMargin: TThostFtdcMoneyType,
+    pub InterProdMargin: TThostFtdcMoneyType,
+    pub SingleMargin: TThostFtdcMoneyType,
+    pub AddOnMargin: TThostFtdcMoneyType,
+    pub DeliveryMargin: TThostFtdcMoneyType,
+    pub CallOptionMinRisk: TThostFtdcMoneyType,
+    pub PutOptionMinRisk: TThostFtdcMoneyType,
+    pub OptionMinRisk: TThostFtdcMoneyType,
+    pub OptionValueOffset: TThostFtdcMoneyType,
+    pub OptionRoyalty: TThostFtdcMoneyType,
+    pub RealOptionValueOffset: TThostFtdcMoneyType,
+    pub Margin: TThostFtdcMoneyType,
+    pub ExchMargin: TThostFtdcMoneyType,
+}
+impl Default for CThostFtdcInvestorProdSPBMDetailField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorProdSPBMDetailField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQryInvestorProdSPBMDetailField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcPortfTradeParamSettingField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub Portfolio: TThostFtdcPortfolioType,
+    pub IsActionVerify: TThostFtdcBoolType,
+    pub IsCloseVerify: TThostFtdcBoolType,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcInvestorTradingRightField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InvstTradingRight: TThostFtdcInvstTradingRightType,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcMortgageParamField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub MortgageBalance: TThostFtdcRatioType,
+    pub CheckMortgageRatio: TThostFtdcBoolType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcWithDrawParamField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub WithDrawParamID: TThostFtdcWithDrawParamIDType,
+    pub WithDrawParamValue: TThostFtdcWithDrawParamValueType,
+}
+impl Default for CThostFtdcWithDrawParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcThostUserFunctionField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub ThostFunctionCode: TThostFtdcThostFunctionCodeType,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcQryThostUserFunctionField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub UserID: TThostFtdcUserIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPBMAddOnInterParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub SpreadId: TThostFtdcSpreadIdType,
+    pub AddOnInterRateZ2: TThostFtdcRatioType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcSPBMAddOnInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPBMAddOnInterParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQrySPBMAddOnInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorCommoditySPMMMarginField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub CommodityID: TThostFtdcSPMMProductIDType,
+}
+impl Default for CThostFtdcQryInvestorCommoditySPMMMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorCommodityGroupSPMMMarginField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub CommodityGroupID: TThostFtdcSPMMProductIDType,
+}
+impl Default for CThostFtdcQryInvestorCommodityGroupSPMMMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPMMInstParamField {
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQrySPMMInstParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQrySPMMProductParamField {
+    pub ProductID: TThostFtdcSPMMProductIDType,
+}
+impl Default for CThostFtdcQrySPMMProductParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorCommoditySPMMMarginField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub CommodityID: TThostFtdcSPMMProductIDType,
+    pub MarginBeforeDiscount: TThostFtdcMoneyType,
+    pub MarginNoDiscount: TThostFtdcMoneyType,
+    pub LongPosRisk: TThostFtdcMoneyType,
+    pub LongOpenFrozenRisk: TThostFtdcMoneyType,
+    pub LongCloseFrozenRisk: TThostFtdcMoneyType,
+    pub ShortPosRisk: TThostFtdcMoneyType,
+    pub ShortOpenFrozenRisk: TThostFtdcMoneyType,
+    pub ShortCloseFrozenRisk: TThostFtdcMoneyType,
+    pub IntraCommodityRate: TThostFtdcSPMMDiscountRatioType,
+    pub OptionDiscountRate: TThostFtdcSPMMDiscountRatioType,
+    pub PosDiscount: TThostFtdcMoneyType,
+    pub OpenFrozenDiscount: TThostFtdcMoneyType,
+    pub NetRisk: TThostFtdcMoneyType,
+    pub CloseFrozenMargin: TThostFtdcMoneyType,
+    pub FrozenCommission: TThostFtdcMoneyType,
+    pub Commission: TThostFtdcMoneyType,
+    pub FrozenCash: TThostFtdcMoneyType,
+    pub CashIn: TThostFtdcMoneyType,
+    pub StrikeFrozenMargin: TThostFtdcMoneyType,
+}
+impl Default for CThostFtdcInvestorCommoditySPMMMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorCommodityGroupSPMMMarginField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub CommodityGroupID: TThostFtdcSPMMProductIDType,
+    pub MarginBeforeDiscount: TThostFtdcMoneyType,
+    pub MarginNoDiscount: TThostFtdcMoneyType,
+    pub LongRisk: TThostFtdcMoneyType,
+    pub ShortRisk: TThostFtdcMoneyType,
+    pub CloseFrozenMargin: TThostFtdcMoneyType,
+    pub InterCommodityRate: TThostFtdcSPMMDiscountRatioType,
+    pub MiniMarginRatio: TThostFtdcSPMMDiscountRatioType,
+    pub AdjustRatio: TThostFtdcRatioType,
+    pub IntraCommodityDiscount: TThostFtdcMoneyType,
+    pub InterCommodityDiscount: TThostFtdcMoneyType,
+    pub ExchMargin: TThostFtdcMoneyType,
+    pub InvestorMargin: TThostFtdcMoneyType,
+    pub FrozenCommission: TThostFtdcMoneyType,
+    pub Commission: TThostFtdcMoneyType,
+    pub FrozenCash: TThostFtdcMoneyType,
+    pub CashIn: TThostFtdcMoneyType,
+    pub StrikeFrozenMargin: TThostFtdcMoneyType,
+}
+impl Default for CThostFtdcInvestorCommodityGroupSPMMMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPMMInstParamField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub InstMarginCalID: TThostFtdcInstMarginCalIDType,
+    pub CommodityID: TThostFtdcSPMMProductIDType,
+    pub CommodityGroupID: TThostFtdcSPMMProductIDType,
+}
+impl Default for CThostFtdcSPMMInstParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSPMMProductParamField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductID: TThostFtdcSPMMProductIDType,
+    pub CommodityID: TThostFtdcSPMMProductIDType,
+    pub CommodityGroupID: TThostFtdcSPMMProductIDType,
+}
+impl Default for CThostFtdcSPMMProductParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcQryTraderAssignField {
+    pub TraderID: TThostFtdcTraderIDType,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcTraderAssignField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub TraderID: TThostFtdcTraderIDType,
+    pub ParticipantID: TThostFtdcParticipantIDType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorInfoCntSettingField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub IsCalInfoComm: TThostFtdcBoolType,
+    pub IsLimitInfoMax: TThostFtdcBoolType,
+    pub InfoMaxLimit: TThostFtdcVolumeType,
+}
+impl Default for CThostFtdcInvestorInfoCntSettingField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRCAMSCombProductInfoField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcRCAMSCombProductInfoField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRCAMSInstrParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub HedgeRate: TThostFtdcHedgeRateType,
+}
+impl Default for CThostFtdcRCAMSInstrParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRCAMSIntraParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub HedgeRate: TThostFtdcHedgeRateType,
+}
+impl Default for CThostFtdcRCAMSIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRCAMSInterParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+    pub Priority: TThostFtdcRCAMSPriorityType,
+    pub CreditRate: TThostFtdcHedgeRateType,
+    pub CombProduct1: TThostFtdcProductIDType,
+    pub CombProduct2: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcRCAMSInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRCAMSShortOptAdjustParamField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    pub AdjustValue: TThostFtdcAdjustValueType,
+}
+impl Default for CThostFtdcRCAMSShortOptAdjustParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRCAMSInvestorCombPositionField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    pub PosiDirection: TThostFtdcPosiDirectionType,
+    pub CombInstrumentID: TThostFtdcInstrumentIDType,
+    pub LegID: TThostFtdcLegIDType,
+    pub ExchangeInstID: TThostFtdcExchangeInstIDType,
+    pub TotalAmt: TThostFtdcVolumeType,
+    pub ExchMargin: TThostFtdcMoneyType,
+    pub Margin: TThostFtdcMoneyType,
+}
+impl Default for CThostFtdcRCAMSInvestorCombPositionField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorProdRCAMSMarginField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+    pub RiskBeforeDiscount: TThostFtdcMoneyType,
+    pub IntraInstrRisk: TThostFtdcMoneyType,
+    pub BPosRisk: TThostFtdcMoneyType,
+    pub SPosRisk: TThostFtdcMoneyType,
+    pub IntraProdRisk: TThostFtdcMoneyType,
+    pub NetRisk: TThostFtdcMoneyType,
+    pub InterProdRisk: TThostFtdcMoneyType,
+    pub ShortOptRiskAdj: TThostFtdcMoneyType,
+    pub OptionRoyalty: TThostFtdcMoneyType,
+    pub MMSACloseFrozenMargin: TThostFtdcMoneyType,
+    pub CloseCombFrozenMargin: TThostFtdcMoneyType,
+    pub CloseFrozenMargin: TThostFtdcMoneyType,
+    pub MMSAOpenFrozenMargin: TThostFtdcMoneyType,
+    pub DeliveryOpenFrozenMargin: TThostFtdcMoneyType,
+    pub OpenFrozenMargin: TThostFtdcMoneyType,
+    pub UseFrozenMargin: TThostFtdcMoneyType,
+    pub MMSAExchMargin: TThostFtdcMoneyType,
+    pub DeliveryExchMargin: TThostFtdcMoneyType,
+    pub CombExchMargin: TThostFtdcMoneyType,
+    pub ExchMargin: TThostFtdcMoneyType,
+    pub UseMargin: TThostFtdcMoneyType,
+}
+impl Default for CThostFtdcInvestorProdRCAMSMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRCAMSCombProductInfoField {
+    pub ProductID: TThostFtdcProductIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcQryRCAMSCombProductInfoField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRCAMSInstrParameterField {
+    pub ProductID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcQryRCAMSInstrParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRCAMSIntraParameterField {
+    pub CombProductID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcQryRCAMSIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRCAMSInterParameterField {
+    pub ProductGroupID: TThostFtdcProductIDType,
+    pub CombProduct1: TThostFtdcProductIDType,
+    pub CombProduct2: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcQryRCAMSInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRCAMSShortOptAdjustParamField {
+    pub CombProductID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcQryRCAMSShortOptAdjustParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRCAMSInvestorCombPositionField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub CombInstrumentID: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQryRCAMSInvestorCombPositionField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorProdRCAMSMarginField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+}
+impl Default for CThostFtdcQryInvestorProdRCAMSMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRULEInstrParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub InstrumentClass: TThostFtdcInstrumentClassType,
+    pub StdInstrumentID: TThostFtdcInstrumentIDType,
+    pub BSpecRatio: TThostFtdcRatioType,
+    pub SSpecRatio: TThostFtdcRatioType,
+    pub BHedgeRatio: TThostFtdcRatioType,
+    pub SHedgeRatio: TThostFtdcRatioType,
+    pub BAddOnMargin: TThostFtdcMoneyType,
+    pub SAddOnMargin: TThostFtdcMoneyType,
+    pub CommodityGroupID: TThostFtdcCommodityGroupIDType,
+}
+impl Default for CThostFtdcRULEInstrParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRULEIntraParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub StdInstrumentID: TThostFtdcInstrumentIDType,
+    pub StdInstrMargin: TThostFtdcMoneyType,
+    pub UsualIntraRate: TThostFtdcRatioType,
+    pub DeliveryIntraRate: TThostFtdcRatioType,
+}
+impl Default for CThostFtdcRULEIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRULEInterParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub SpreadId: TThostFtdcSpreadIdType,
+    pub InterRate: TThostFtdcRatioType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg1PropFactor: TThostFtdcCommonIntType,
+    pub Leg2PropFactor: TThostFtdcCommonIntType,
+    pub CommodityGroupID: TThostFtdcCommodityGroupIDType,
+    pub CommodityGroupName: TThostFtdcInstrumentNameType,
+}
+impl Default for CThostFtdcRULEInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRULEInstrParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQryRULEInstrParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRULEIntraParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQryRULEIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryRULEInterParameterField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub CommodityGroupID: TThostFtdcCommodityGroupIDType,
+}
+impl Default for CThostFtdcQryRULEInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorProdRULEMarginField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub InstrumentClass: TThostFtdcInstrumentClassType,
+    pub CommodityGroupID: TThostFtdcCommodityGroupIDType,
+    pub BStdPosition: TThostFtdcStdPositionType,
+    pub SStdPosition: TThostFtdcStdPositionType,
+    pub BStdOpenFrozen: TThostFtdcStdPositionType,
+    pub SStdOpenFrozen: TThostFtdcStdPositionType,
+    pub BStdCloseFrozen: TThostFtdcStdPositionType,
+    pub SStdCloseFrozen: TThostFtdcStdPositionType,
+    pub IntraProdStdPosition: TThostFtdcStdPositionType,
+    pub NetStdPosition: TThostFtdcStdPositionType,
+    pub InterProdStdPosition: TThostFtdcStdPositionType,
+    pub SingleStdPosition: TThostFtdcStdPositionType,
+    pub IntraProdMargin: TThostFtdcMoneyType,
+    pub InterProdMargin: TThostFtdcMoneyType,
+    pub SingleMargin: TThostFtdcMoneyType,
+    pub NonCombMargin: TThostFtdcMoneyType,
+    pub AddOnMargin: TThostFtdcMoneyType,
+    pub ExchMargin: TThostFtdcMoneyType,
+    pub AddOnFrozenMargin: TThostFtdcMoneyType,
+    pub OpenFrozenMargin: TThostFtdcMoneyType,
+    pub CloseFrozenMargin: TThostFtdcMoneyType,
+    pub Margin: TThostFtdcMoneyType,
+    pub FrozenMargin: TThostFtdcMoneyType,
+}
+impl Default for CThostFtdcInvestorProdRULEMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorProdRULEMarginField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub CommodityGroupID: TThostFtdcCommodityGroupIDType,
+}
+impl Default for CThostFtdcQryInvestorProdRULEMarginField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPBMPortfDefinitionField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub PortfolioDefID: TThostFtdcPortfolioDefIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub IsSPBM: TThostFtdcBoolType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPBMPortfDefinitionField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPBMInvstPortfDefField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub PortfolioDefID: TThostFtdcPortfolioDefIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPBMFutureParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Cvf: TThostFtdcVolumeMultipleType,
+    pub TimeRange: TThostFtdcTimeRangeType,
+    pub MarginRate: TThostFtdcRatioType,
+    pub LockRateX: TThostFtdcRatioType,
+    pub AddOnRate: TThostFtdcRatioType,
+    pub PreSettlementPrice: TThostFtdcPriceType,
+    pub AddOnLockRateX2: TThostFtdcRatioType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPBMFutureParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPBMOptionParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Cvf: TThostFtdcVolumeMultipleType,
+    pub DownPrice: TThostFtdcPriceType,
+    pub Delta: TThostFtdcDeltaType,
+    pub SlimiDelta: TThostFtdcDeltaType,
+    pub PreSettlementPrice: TThostFtdcPriceType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPBMOptionParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPBMIntraParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub IntraRateY: TThostFtdcRatioType,
+    pub AddOnIntraRateY2: TThostFtdcRatioType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPBMIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPBMInterParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub SpreadId: TThostFtdcSpreadIdType,
+    pub InterRateZ: TThostFtdcRatioType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPBMInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPBMAddOnInterParamField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub SpreadId: TThostFtdcSpreadIdType,
+    pub AddOnInterRateZ2: TThostFtdcRatioType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPBMAddOnInterParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPMMInstParamField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub InstMarginCalID: TThostFtdcInstMarginCalIDType,
+    pub CommodityID: TThostFtdcSPMMProductIDType,
+    pub CommodityGroupID: TThostFtdcSPMMProductIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPMMInstParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPMMProductParamField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductID: TThostFtdcSPMMProductIDType,
+    pub CommodityID: TThostFtdcSPMMProductIDType,
+    pub CommodityGroupID: TThostFtdcSPMMProductIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPMMProductParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaInvestorSPMMModelField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub SPMMModelID: TThostFtdcSPMMModelIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaInvestorSPMMModelField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaSPMMModelParamField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub SPMMModelID: TThostFtdcSPMMModelIDType,
+    pub CommodityGroupID: TThostFtdcSPMMProductIDType,
+    pub IntraCommodityRate: TThostFtdcSPMMDiscountRatioType,
+    pub InterCommodityRate: TThostFtdcSPMMDiscountRatioType,
+    pub OptionDiscountRate: TThostFtdcSPMMDiscountRatioType,
+    pub MiniMarginRatio: TThostFtdcSPMMDiscountRatioType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaSPMMModelParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRCAMSCombProdInfoField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRCAMSCombProdInfoField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRCAMSInstrParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub HedgeRate: TThostFtdcHedgeRateType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRCAMSInstrParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRCAMSIntraParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub HedgeRate: TThostFtdcHedgeRateType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRCAMSIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRCAMSInterParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProductGroupID: TThostFtdcProductIDType,
+    pub Priority: TThostFtdcRCAMSPriorityType,
+    pub CreditRate: TThostFtdcHedgeRateType,
+    pub CombProduct1: TThostFtdcProductIDType,
+    pub CombProduct2: TThostFtdcProductIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRCAMSInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRCAMSSOptAdjParamField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub CombProductID: TThostFtdcProductIDType,
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    pub AdjustValue: TThostFtdcAdjustValueType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRCAMSSOptAdjParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRCAMSCombRuleDtlField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProdGroup: TThostFtdcProductIDType,
+    pub RuleId: TThostFtdcRuleIdType,
+    pub Priority: TThostFtdcRCAMSPriorityType,
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    pub CombMargin: TThostFtdcMoneyType,
+    pub ExchangeInstID: TThostFtdcExchangeInstIDType,
+    pub LegID: TThostFtdcLegIDType,
+    pub LegInstrumentID: TThostFtdcInstrumentIDType,
+    pub Direction: TThostFtdcDirectionType,
+    pub LegMultiple: TThostFtdcLegMultipleType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRCAMSCombRuleDtlField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRCAMSInvstCombPosField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    pub PosiDirection: TThostFtdcPosiDirectionType,
+    pub CombInstrumentID: TThostFtdcInstrumentIDType,
+    pub LegID: TThostFtdcLegIDType,
+    pub ExchangeInstID: TThostFtdcExchangeInstIDType,
+    pub TotalAmt: TThostFtdcVolumeType,
+    pub ExchMargin: TThostFtdcMoneyType,
+    pub Margin: TThostFtdcMoneyType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRCAMSInvstCombPosField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRULEInstrParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub InstrumentClass: TThostFtdcInstrumentClassType,
+    pub StdInstrumentID: TThostFtdcInstrumentIDType,
+    pub BSpecRatio: TThostFtdcRatioType,
+    pub SSpecRatio: TThostFtdcRatioType,
+    pub BHedgeRatio: TThostFtdcRatioType,
+    pub SHedgeRatio: TThostFtdcRatioType,
+    pub BAddOnMargin: TThostFtdcMoneyType,
+    pub SAddOnMargin: TThostFtdcMoneyType,
+    pub CommodityGroupID: TThostFtdcCommodityGroupIDType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRULEInstrParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRULEIntraParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub StdInstrumentID: TThostFtdcInstrumentIDType,
+    pub StdInstrMargin: TThostFtdcMoneyType,
+    pub UsualIntraRate: TThostFtdcRatioType,
+    pub DeliveryIntraRate: TThostFtdcRatioType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRULEIntraParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSyncDeltaRULEInterParameterField {
+    pub TradingDay: TThostFtdcDateType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub SpreadId: TThostFtdcSpreadIdType,
+    pub InterRate: TThostFtdcRatioType,
+    pub Leg1ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg2ProdFamilyCode: TThostFtdcInstrumentIDType,
+    pub Leg1PropFactor: TThostFtdcCommonIntType,
+    pub Leg2PropFactor: TThostFtdcCommonIntType,
+    pub CommodityGroupID: TThostFtdcCommodityGroupIDType,
+    pub CommodityGroupName: TThostFtdcInstrumentNameType,
+    pub ActionDirection: TThostFtdcActionDirectionType,
+    pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcSyncDeltaRULEInterParameterField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcIpAddrParamField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub Address: TThostFtdcIpAddrType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub DRIdentityName: TThostFtdcDRIdentityNameType,
+    pub AddrSrvMode: TThostFtdcAddrSrvModeType,
+    pub AddrVer: TThostFtdcAddrVerType,
+    pub AddrNo: TThostFtdcCommonIntType,
+    pub AddrName: TThostFtdcAddrNameType,
+    pub IsSM: TThostFtdcBoolType,
+    pub IsLocalAddr: TThostFtdcBoolType,
+    pub Remark: TThostFtdcAddrRemarkType,
+    pub Site: TThostFtdcSiteType,
+    pub NetOperator: TThostFtdcNetOperatorType,
+}
+impl Default for CThostFtdcIpAddrParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcQryIpAddrParamField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcTGIpAddrParamField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub Address: TThostFtdcIpAddrType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub DRIdentityName: TThostFtdcDRIdentityNameType,
+    pub AddrSrvMode: TThostFtdcAddrSrvModeType,
+    pub AddrVer: TThostFtdcAddrVerType,
+    pub AddrNo: TThostFtdcCommonIntType,
+    pub AddrName: TThostFtdcAddrNameType,
+    pub IsSM: TThostFtdcBoolType,
+    pub IsLocalAddr: TThostFtdcBoolType,
+    pub Remark: TThostFtdcAddrRemarkType,
+    pub Site: TThostFtdcSiteType,
+    pub NetOperator: TThostFtdcNetOperatorType,
+}
+impl Default for CThostFtdcTGIpAddrParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryTGIpAddrParamField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub AppID: TThostFtdcAppIDType,
+}
+impl Default for CThostFtdcQryTGIpAddrParamField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcTGSessionQryStatusField {
+    pub LastQryFreq: TThostFtdcCommonIntType,
+    pub QryStatus: TThostFtdcTGSessionQryStatusType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcLocalAddrConfigField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub PeerAddr: TThostFtdcIpAddrType,
+    pub NetMask: TThostFtdcIpAddrType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub LocalAddress: TThostFtdcIpAddrType,
+}
+impl Default for CThostFtdcLocalAddrConfigField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcQryLocalAddrConfigField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcReqQueryBankAccountBySecField {
+    pub TradeCode: TThostFtdcTradeCodeType,
+    pub BankID: TThostFtdcBankIDType,
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    pub TradeDate: TThostFtdcTradeDateType,
+    pub TradeTime: TThostFtdcTradeTimeType,
+    pub BankSerial: TThostFtdcBankSerialType,
+    pub TradingDay: TThostFtdcTradeDateType,
+    pub PlateSerial: TThostFtdcSerialType,
+    pub LastFragment: TThostFtdcLastFragmentType,
+    pub SessionID: TThostFtdcSessionIDType,
+    pub CustomerName: TThostFtdcIndividualNameType,
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    pub CustType: TThostFtdcCustTypeType,
+    pub BankAccount: TThostFtdcBankAccountType,
+    pub BankPassWord: TThostFtdcPasswordType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub Password: TThostFtdcPasswordType,
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    pub InstallID: TThostFtdcInstallIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    pub Digest: TThostFtdcDigestType,
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    pub DeviceID: TThostFtdcDeviceIDType,
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    pub OperNo: TThostFtdcOperNoType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub TID: TThostFtdcTIDType,
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+impl Default for CThostFtdcReqQueryBankAccountBySecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRspQueryBankAccountBySecField {
+    pub TradeCode: TThostFtdcTradeCodeType,
+    pub BankID: TThostFtdcBankIDType,
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    pub TradeDate: TThostFtdcTradeDateType,
+    pub TradeTime: TThostFtdcTradeTimeType,
+    pub BankSerial: TThostFtdcBankSerialType,
+    pub TradingDay: TThostFtdcTradeDateType,
+    pub PlateSerial: TThostFtdcSerialType,
+    pub LastFragment: TThostFtdcLastFragmentType,
+    pub SessionID: TThostFtdcSessionIDType,
+    pub CustomerName: TThostFtdcIndividualNameType,
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    pub CustType: TThostFtdcCustTypeType,
+    pub BankAccount: TThostFtdcBankAccountType,
+    pub BankPassWord: TThostFtdcPasswordType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub Password: TThostFtdcPasswordType,
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    pub InstallID: TThostFtdcInstallIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    pub Digest: TThostFtdcDigestType,
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    pub DeviceID: TThostFtdcDeviceIDType,
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    pub OperNo: TThostFtdcOperNoType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub TID: TThostFtdcTIDType,
+    pub BankUseAmount: TThostFtdcTradeAmountType,
+    pub BankFetchAmount: TThostFtdcTradeAmountType,
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+impl Default for CThostFtdcRspQueryBankAccountBySecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcReqTransferBySecField {
+    pub TradeCode: TThostFtdcTradeCodeType,
+    pub BankID: TThostFtdcBankIDType,
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    pub TradeDate: TThostFtdcTradeDateType,
+    pub TradeTime: TThostFtdcTradeTimeType,
+    pub BankSerial: TThostFtdcBankSerialType,
+    pub TradingDay: TThostFtdcTradeDateType,
+    pub PlateSerial: TThostFtdcSerialType,
+    pub LastFragment: TThostFtdcLastFragmentType,
+    pub SessionID: TThostFtdcSessionIDType,
+    pub CustomerName: TThostFtdcIndividualNameType,
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    pub CustType: TThostFtdcCustTypeType,
+    pub BankAccount: TThostFtdcBankAccountType,
+    pub BankPassWord: TThostFtdcPasswordType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub Password: TThostFtdcPasswordType,
+    pub InstallID: TThostFtdcInstallIDType,
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    pub UserID: TThostFtdcUserIDType,
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    pub TradeAmount: TThostFtdcTradeAmountType,
+    pub FutureFetchAmount: TThostFtdcTradeAmountType,
+    pub FeePayFlag: TThostFtdcFeePayFlagType,
+    pub CustFee: TThostFtdcCustFeeType,
+    pub BrokerFee: TThostFtdcFutureFeeType,
+    pub Message: TThostFtdcAddInfoType,
+    pub Digest: TThostFtdcDigestType,
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    pub DeviceID: TThostFtdcDeviceIDType,
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    pub OperNo: TThostFtdcOperNoType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub TID: TThostFtdcTIDType,
+    pub TransferStatus: TThostFtdcTransferStatusType,
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+impl Default for CThostFtdcReqTransferBySecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRspTransferBySecField {
+    pub TradeCode: TThostFtdcTradeCodeType,
+    pub BankID: TThostFtdcBankIDType,
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    pub TradeDate: TThostFtdcTradeDateType,
+    pub TradeTime: TThostFtdcTradeTimeType,
+    pub BankSerial: TThostFtdcBankSerialType,
+    pub TradingDay: TThostFtdcTradeDateType,
+    pub PlateSerial: TThostFtdcSerialType,
+    pub LastFragment: TThostFtdcLastFragmentType,
+    pub SessionID: TThostFtdcSessionIDType,
+    pub CustomerName: TThostFtdcIndividualNameType,
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    pub CustType: TThostFtdcCustTypeType,
+    pub BankAccount: TThostFtdcBankAccountType,
+    pub BankPassWord: TThostFtdcPasswordType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub Password: TThostFtdcPasswordType,
+    pub InstallID: TThostFtdcInstallIDType,
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    pub UserID: TThostFtdcUserIDType,
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    pub TradeAmount: TThostFtdcTradeAmountType,
+    pub FutureFetchAmount: TThostFtdcTradeAmountType,
+    pub FeePayFlag: TThostFtdcFeePayFlagType,
+    pub CustFee: TThostFtdcCustFeeType,
+    pub BrokerFee: TThostFtdcFutureFeeType,
+    pub Message: TThostFtdcAddInfoType,
+    pub Digest: TThostFtdcDigestType,
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    pub DeviceID: TThostFtdcDeviceIDType,
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    pub OperNo: TThostFtdcOperNoType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub TID: TThostFtdcTIDType,
+    pub TransferStatus: TThostFtdcTransferStatusType,
+    pub ErrorID: TThostFtdcErrorIDType,
+    pub ErrorMsg: TThostFtdcErrorMsgType,
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+impl Default for CThostFtdcRspTransferBySecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcNotifyQueryFutureAccountBySecField {
+    pub TradeCode: TThostFtdcTradeCodeType,
+    pub BankID: TThostFtdcBankIDType,
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    pub TradeDate: TThostFtdcTradeDateType,
+    pub TradeTime: TThostFtdcTradeTimeType,
+    pub BankSerial: TThostFtdcBankSerialType,
+    pub TradingDay: TThostFtdcTradeDateType,
+    pub PlateSerial: TThostFtdcSerialType,
+    pub LastFragment: TThostFtdcLastFragmentType,
+    pub SessionID: TThostFtdcSessionIDType,
+    pub CustomerName: TThostFtdcIndividualNameType,
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    pub CustType: TThostFtdcCustTypeType,
+    pub BankAccount: TThostFtdcBankAccountType,
+    pub BankPassWord: TThostFtdcPasswordType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub Password: TThostFtdcPasswordType,
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    pub InstallID: TThostFtdcInstallIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    pub Digest: TThostFtdcDigestType,
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    pub DeviceID: TThostFtdcDeviceIDType,
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    pub OperNo: TThostFtdcOperNoType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub TID: TThostFtdcTIDType,
+    pub BankUseAmount: TThostFtdcTradeAmountType,
+    pub BankFetchAmount: TThostFtdcTradeAmountType,
+    pub ErrorID: TThostFtdcErrorIDType,
+    pub ErrorMsg: TThostFtdcErrorMsgType,
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+impl Default for CThostFtdcNotifyQueryFutureAccountBySecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcExitEmergencyField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcInvestorPortfMarginModelField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub MarginModelID: TThostFtdcInvestorIDType,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcInvestorPortfSettingField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    pub UsePortf: TThostFtdcBoolType,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcQryInvestorPortfSettingField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcUserPasswordUpdateFromSecField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub OldPassword: TThostFtdcPasswordType,
+    pub NewPassword: TThostFtdcPasswordType,
+    pub FromSec: TThostFtdcDRIdentityIDType,
+}
+impl Default for CThostFtdcUserPasswordUpdateFromSecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcSettlementInfoConfirmFromSecField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ConfirmDate: TThostFtdcDateType,
+    pub ConfirmTime: TThostFtdcTimeType,
+    pub FromSec: TThostFtdcDRIdentityIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcTradingAccountPasswordUpdateFromSecField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub AccountID: TThostFtdcAccountIDType,
+    pub OldPassword: TThostFtdcPasswordType,
+    pub NewPassword: TThostFtdcPasswordType,
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    pub FromSec: TThostFtdcDRIdentityIDType,
+}
+impl Default for CThostFtdcTradingAccountPasswordUpdateFromSecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRiskForbiddenRightField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub UserID: TThostFtdcUserIDType,
+}
+impl Default for CThostFtdcRiskForbiddenRightField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorInfoCommRecField {
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub OrderCount: TThostFtdcVolumeType,
+    pub OrderActionCount: TThostFtdcVolumeType,
+    pub ForQuoteCnt: TThostFtdcVolumeType,
+    pub InfoComm: TThostFtdcMoneyType,
+    pub IsOptSeries: TThostFtdcBoolType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub InfoCnt: TThostFtdcVolumeType,
+}
+impl Default for CThostFtdcInvestorInfoCommRecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorInfoCommRecField {
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+impl Default for CThostFtdcQryInvestorInfoCommRecField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcCombLegField {
+    pub CombInstrumentID: TThostFtdcInstrumentIDType,
+    pub LegID: TThostFtdcLegIDType,
+    pub LegInstrumentID: TThostFtdcInstrumentIDType,
+    pub Direction: TThostFtdcDirectionType,
+    pub LegMultiple: TThostFtdcLegMultipleType,
+    pub ImplyLevel: TThostFtdcImplyLevelType,
+}
+impl Default for CThostFtdcCombLegField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryCombLegField {
+    pub LegInstrumentID: TThostFtdcInstrumentIDType,
+}
+impl Default for CThostFtdcQryCombLegField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInputOffsetSettingField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub UnderlyingInstrID: TThostFtdcInstrumentIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub OffsetType: TThostFtdcOffsetTypeType,
+    pub Volume: TThostFtdcVolumeType,
+    pub IsOffset: TThostFtdcBoolType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub IPAddress: TThostFtdcIPAddressType,
+    pub MacAddress: TThostFtdcMacAddressType,
+}
+impl Default for CThostFtdcInputOffsetSettingField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcOffsetSettingField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub UnderlyingInstrID: TThostFtdcInstrumentIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub OffsetType: TThostFtdcOffsetTypeType,
+    pub Volume: TThostFtdcVolumeType,
+    pub IsOffset: TThostFtdcBoolType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub IPAddress: TThostFtdcIPAddressType,
+    pub MacAddress: TThostFtdcMacAddressType,
+    pub ExchangeInstID: TThostFtdcExchangeInstIDType,
+    pub ExchangeSerialNo: TThostFtdcExchangeInstIDType,
+    pub ExchangeProductID: TThostFtdcProductIDType,
+    pub ParticipantID: TThostFtdcParticipantIDType,
+    pub ClientID: TThostFtdcClientIDType,
+    pub TraderID: TThostFtdcTraderIDType,
+    pub InstallID: TThostFtdcInstallIDType,
+    pub OrderSubmitStatus: TThostFtdcOrderSubmitStatusType,
+    pub TradingDay: TThostFtdcDateType,
+    pub SettlementID: TThostFtdcSettlementIDType,
+    pub InsertDate: TThostFtdcDateType,
+    pub InsertTime: TThostFtdcTimeType,
+    pub CancelTime: TThostFtdcTimeType,
+    pub ExecResult: TThostFtdcExecResultType,
+    pub SequenceNo: TThostFtdcSequenceNoType,
+    pub FrontID: TThostFtdcFrontIDType,
+    pub SessionID: TThostFtdcSessionIDType,
+    pub StatusMsg: TThostFtdcErrorMsgType,
+    pub ActiveUserID: TThostFtdcUserIDType,
+    pub BrokerOffsetSettingSeq: TThostFtdcSequenceNoType,
+}
+impl Default for CThostFtdcOffsetSettingField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcCancelOffsetSettingField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    pub UnderlyingInstrID: TThostFtdcInstrumentIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub OffsetType: TThostFtdcOffsetTypeType,
+    pub Volume: TThostFtdcVolumeType,
+    pub IsOffset: TThostFtdcBoolType,
+    pub RequestID: TThostFtdcRequestIDType,
+    pub UserID: TThostFtdcUserIDType,
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    pub IPAddress: TThostFtdcIPAddressType,
+    pub MacAddress: TThostFtdcMacAddressType,
+    pub ExchangeInstID: TThostFtdcExchangeInstIDType,
+    pub ExchangeSerialNo: TThostFtdcExchangeInstIDType,
+    pub ExchangeProductID: TThostFtdcProductIDType,
+    pub TraderID: TThostFtdcTraderIDType,
+    pub InstallID: TThostFtdcInstallIDType,
+    pub ParticipantID: TThostFtdcParticipantIDType,
+    pub ClientID: TThostFtdcClientIDType,
+    pub OrderActionStatus: TThostFtdcOrderActionStatusType,
+    pub StatusMsg: TThostFtdcErrorMsgType,
+    pub ActionLocalID: TThostFtdcOrderLocalIDType,
+    pub ActionDate: TThostFtdcDateType,
+    pub ActionTime: TThostFtdcTimeType,
+}
+impl Default for CThostFtdcCancelOffsetSettingField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryOffsetSettingField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub InvestorID: TThostFtdcInvestorIDType,
+    pub ProductID: TThostFtdcProductIDType,
+    pub OffsetType: TThostFtdcOffsetTypeType,
+}
+impl Default for CThostFtdcQryOffsetSettingField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcAddrAppIDRelationField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+    pub Address: TThostFtdcIpAddrType,
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    pub AppID: TThostFtdcAppIDType,
+}
+impl Default for CThostFtdcAddrAppIDRelationField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct CThostFtdcQryAddrAppIDRelationField {
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcFrontInfoField {
+    pub FrontAddr: TThostFtdcAddressType,
+    pub QryFreq: TThostFtdcQueryFreqType,
+    pub FTDPkgFreq: TThostFtdcQueryFreqType,
+}
+impl Default for CThostFtdcFrontInfoField {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
 #[repr(align(8))]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct CThostFtdcMdSpi {
@@ -10897,6 +13196,13 @@ extern "C" {
     pub fn Rust_CThostFtdcTraderApi_GetTradingDay(
         this: *mut Rust_CThostFtdcTraderApi,
     ) -> *const ::std::os::raw::c_char;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi12GetFrontInfoEP24CThostFtdcFrontInfoField"]
+    pub fn Rust_CThostFtdcTraderApi_GetFrontInfo(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pFrontInfo: *mut CThostFtdcFrontInfoField,
+    );
 }
 extern "C" {
     #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi13RegisterFrontEPc"]
@@ -11651,6 +13957,246 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi25ReqQrySPBMFutureParameterEP37CThostFtdcQrySPBMFutureParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPBMFutureParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPBMFutureParameter: *mut CThostFtdcQrySPBMFutureParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi25ReqQrySPBMOptionParameterEP37CThostFtdcQrySPBMOptionParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPBMOptionParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPBMOptionParameter: *mut CThostFtdcQrySPBMOptionParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi24ReqQrySPBMIntraParameterEP36CThostFtdcQrySPBMIntraParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPBMIntraParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPBMIntraParameter: *mut CThostFtdcQrySPBMIntraParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi24ReqQrySPBMInterParameterEP36CThostFtdcQrySPBMInterParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPBMInterParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPBMInterParameter: *mut CThostFtdcQrySPBMInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi25ReqQrySPBMPortfDefinitionEP37CThostFtdcQrySPBMPortfDefinitionFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPBMPortfDefinition(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPBMPortfDefinition: *mut CThostFtdcQrySPBMPortfDefinitionField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi26ReqQrySPBMInvestorPortfDefEP38CThostFtdcQrySPBMInvestorPortfDefFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPBMInvestorPortfDef: *mut CThostFtdcQrySPBMInvestorPortfDefField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi30ReqQryInvestorPortfMarginRatioEP42CThostFtdcQryInvestorPortfMarginRatioFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorPortfMarginRatio: *mut CThostFtdcQryInvestorPortfMarginRatioField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi28ReqQryInvestorProdSPBMDetailEP40CThostFtdcQryInvestorProdSPBMDetailFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorProdSPBMDetail: *mut CThostFtdcQryInvestorProdSPBMDetailField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi33ReqQryInvestorCommoditySPMMMarginEP45CThostFtdcQryInvestorCommoditySPMMMarginFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorCommoditySPMMMargin: *mut CThostFtdcQryInvestorCommoditySPMMMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi38ReqQryInvestorCommodityGroupSPMMMarginEP50CThostFtdcQryInvestorCommodityGroupSPMMMarginFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorCommodityGroupSPMMMargin : * mut CThostFtdcQryInvestorCommodityGroupSPMMMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi19ReqQrySPMMInstParamEP31CThostFtdcQrySPMMInstParamFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPMMInstParam(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPMMInstParam: *mut CThostFtdcQrySPMMInstParamField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi22ReqQrySPMMProductParamEP34CThostFtdcQrySPMMProductParamFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPMMProductParam(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPMMProductParam: *mut CThostFtdcQrySPMMProductParamField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi29ReqQrySPBMAddOnInterParameterEP41CThostFtdcQrySPBMAddOnInterParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQrySPBMAddOnInterParameter: *mut CThostFtdcQrySPBMAddOnInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi26ReqQryRCAMSCombProductInfoEP38CThostFtdcQryRCAMSCombProductInfoFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRCAMSCombProductInfo: *mut CThostFtdcQryRCAMSCombProductInfoField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi25ReqQryRCAMSInstrParameterEP37CThostFtdcQryRCAMSInstrParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRCAMSInstrParameter: *mut CThostFtdcQryRCAMSInstrParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi25ReqQryRCAMSIntraParameterEP37CThostFtdcQryRCAMSIntraParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRCAMSIntraParameter: *mut CThostFtdcQryRCAMSIntraParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi25ReqQryRCAMSInterParameterEP37CThostFtdcQryRCAMSInterParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRCAMSInterParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRCAMSInterParameter: *mut CThostFtdcQryRCAMSInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi30ReqQryRCAMSShortOptAdjustParamEP42CThostFtdcQryRCAMSShortOptAdjustParamFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRCAMSShortOptAdjustParam: *mut CThostFtdcQryRCAMSShortOptAdjustParamField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi31ReqQryRCAMSInvestorCombPositionEP43CThostFtdcQryRCAMSInvestorCombPositionFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRCAMSInvestorCombPosition: *mut CThostFtdcQryRCAMSInvestorCombPositionField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi29ReqQryInvestorProdRCAMSMarginEP41CThostFtdcQryInvestorProdRCAMSMarginFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorProdRCAMSMargin: *mut CThostFtdcQryInvestorProdRCAMSMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi24ReqQryRULEInstrParameterEP36CThostFtdcQryRULEInstrParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRULEInstrParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRULEInstrParameter: *mut CThostFtdcQryRULEInstrParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi24ReqQryRULEIntraParameterEP36CThostFtdcQryRULEIntraParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRULEIntraParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRULEIntraParameter: *mut CThostFtdcQryRULEIntraParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi24ReqQryRULEInterParameterEP36CThostFtdcQryRULEInterParameterFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryRULEInterParameter(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryRULEInterParameter: *mut CThostFtdcQryRULEInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi28ReqQryInvestorProdRULEMarginEP40CThostFtdcQryInvestorProdRULEMarginFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorProdRULEMargin: *mut CThostFtdcQryInvestorProdRULEMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi26ReqQryInvestorPortfSettingEP38CThostFtdcQryInvestorPortfSettingFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorPortfSetting(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorPortfSetting: *mut CThostFtdcQryInvestorPortfSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi25ReqQryInvestorInfoCommRecEP37CThostFtdcQryInvestorInfoCommRecFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryInvestorInfoCommRec(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryInvestorInfoCommRec: *mut CThostFtdcQryInvestorInfoCommRecField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi13ReqQryCombLegEP25CThostFtdcQryCombLegFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryCombLeg(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryCombLeg: *mut CThostFtdcQryCombLegField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi16ReqOffsetSettingEP33CThostFtdcInputOffsetSettingFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqOffsetSetting(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi22ReqCancelOffsetSettingEP33CThostFtdcInputOffsetSettingFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqCancelOffsetSetting(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApi19ReqQryOffsetSettingEP31CThostFtdcQryOffsetSettingFieldi"]
+    pub fn Rust_CThostFtdcTraderApi_ReqQryOffsetSetting(
+        this: *mut Rust_CThostFtdcTraderApi,
+        pQryOffsetSetting: *mut CThostFtdcQryOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
     #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderApiC1EP19CThostFtdcTraderApi"]
     pub fn Rust_CThostFtdcTraderApi_Rust_CThostFtdcTraderApi(
         this: *mut Rust_CThostFtdcTraderApi,
@@ -11688,6 +14234,10 @@ impl Rust_CThostFtdcTraderApi {
     #[inline]
     pub unsafe fn GetTradingDay(&mut self) -> *const ::std::os::raw::c_char {
         Rust_CThostFtdcTraderApi_GetTradingDay(self)
+    }
+    #[inline]
+    pub unsafe fn GetFrontInfo(&mut self, pFrontInfo: *mut CThostFtdcFrontInfoField) {
+        Rust_CThostFtdcTraderApi_GetFrontInfo(self, pFrontInfo)
     }
     #[inline]
     pub unsafe fn RegisterFront(&mut self, pszFrontAddress: *mut ::std::os::raw::c_char) {
@@ -12514,6 +15064,322 @@ impl Rust_CThostFtdcTraderApi {
             pQryRiskSettleProductStatus,
             nRequestID,
         )
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPBMFutureParameter(
+        &mut self,
+        pQrySPBMFutureParameter: *mut CThostFtdcQrySPBMFutureParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPBMFutureParameter(
+            self,
+            pQrySPBMFutureParameter,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPBMOptionParameter(
+        &mut self,
+        pQrySPBMOptionParameter: *mut CThostFtdcQrySPBMOptionParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPBMOptionParameter(
+            self,
+            pQrySPBMOptionParameter,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPBMIntraParameter(
+        &mut self,
+        pQrySPBMIntraParameter: *mut CThostFtdcQrySPBMIntraParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPBMIntraParameter(self, pQrySPBMIntraParameter, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPBMInterParameter(
+        &mut self,
+        pQrySPBMInterParameter: *mut CThostFtdcQrySPBMInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPBMInterParameter(self, pQrySPBMInterParameter, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPBMPortfDefinition(
+        &mut self,
+        pQrySPBMPortfDefinition: *mut CThostFtdcQrySPBMPortfDefinitionField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPBMPortfDefinition(
+            self,
+            pQrySPBMPortfDefinition,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPBMInvestorPortfDef(
+        &mut self,
+        pQrySPBMInvestorPortfDef: *mut CThostFtdcQrySPBMInvestorPortfDefField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef(
+            self,
+            pQrySPBMInvestorPortfDef,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorPortfMarginRatio(
+        &mut self,
+        pQryInvestorPortfMarginRatio: *mut CThostFtdcQryInvestorPortfMarginRatioField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio(
+            self,
+            pQryInvestorPortfMarginRatio,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorProdSPBMDetail(
+        &mut self,
+        pQryInvestorProdSPBMDetail: *mut CThostFtdcQryInvestorProdSPBMDetailField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(
+            self,
+            pQryInvestorProdSPBMDetail,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorCommoditySPMMMargin(
+        &mut self,
+        pQryInvestorCommoditySPMMMargin: *mut CThostFtdcQryInvestorCommoditySPMMMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(
+            self,
+            pQryInvestorCommoditySPMMMargin,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorCommodityGroupSPMMMargin(
+        &mut self,
+        pQryInvestorCommodityGroupSPMMMargin : * mut CThostFtdcQryInvestorCommodityGroupSPMMMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(
+            self,
+            pQryInvestorCommodityGroupSPMMMargin,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPMMInstParam(
+        &mut self,
+        pQrySPMMInstParam: *mut CThostFtdcQrySPMMInstParamField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPMMInstParam(self, pQrySPMMInstParam, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPMMProductParam(
+        &mut self,
+        pQrySPMMProductParam: *mut CThostFtdcQrySPMMProductParamField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPMMProductParam(self, pQrySPMMProductParam, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQrySPBMAddOnInterParameter(
+        &mut self,
+        pQrySPBMAddOnInterParameter: *mut CThostFtdcQrySPBMAddOnInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(
+            self,
+            pQrySPBMAddOnInterParameter,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryRCAMSCombProductInfo(
+        &mut self,
+        pQryRCAMSCombProductInfo: *mut CThostFtdcQryRCAMSCombProductInfoField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(
+            self,
+            pQryRCAMSCombProductInfo,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryRCAMSInstrParameter(
+        &mut self,
+        pQryRCAMSInstrParameter: *mut CThostFtdcQryRCAMSInstrParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(
+            self,
+            pQryRCAMSInstrParameter,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryRCAMSIntraParameter(
+        &mut self,
+        pQryRCAMSIntraParameter: *mut CThostFtdcQryRCAMSIntraParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(
+            self,
+            pQryRCAMSIntraParameter,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryRCAMSInterParameter(
+        &mut self,
+        pQryRCAMSInterParameter: *mut CThostFtdcQryRCAMSInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRCAMSInterParameter(
+            self,
+            pQryRCAMSInterParameter,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryRCAMSShortOptAdjustParam(
+        &mut self,
+        pQryRCAMSShortOptAdjustParam: *mut CThostFtdcQryRCAMSShortOptAdjustParamField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(
+            self,
+            pQryRCAMSShortOptAdjustParam,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryRCAMSInvestorCombPosition(
+        &mut self,
+        pQryRCAMSInvestorCombPosition: *mut CThostFtdcQryRCAMSInvestorCombPositionField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(
+            self,
+            pQryRCAMSInvestorCombPosition,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorProdRCAMSMargin(
+        &mut self,
+        pQryInvestorProdRCAMSMargin: *mut CThostFtdcQryInvestorProdRCAMSMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(
+            self,
+            pQryInvestorProdRCAMSMargin,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryRULEInstrParameter(
+        &mut self,
+        pQryRULEInstrParameter: *mut CThostFtdcQryRULEInstrParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRULEInstrParameter(self, pQryRULEInstrParameter, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQryRULEIntraParameter(
+        &mut self,
+        pQryRULEIntraParameter: *mut CThostFtdcQryRULEIntraParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRULEIntraParameter(self, pQryRULEIntraParameter, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQryRULEInterParameter(
+        &mut self,
+        pQryRULEInterParameter: *mut CThostFtdcQryRULEInterParameterField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryRULEInterParameter(self, pQryRULEInterParameter, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorProdRULEMargin(
+        &mut self,
+        pQryInvestorProdRULEMargin: *mut CThostFtdcQryInvestorProdRULEMarginField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(
+            self,
+            pQryInvestorProdRULEMargin,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorPortfSetting(
+        &mut self,
+        pQryInvestorPortfSetting: *mut CThostFtdcQryInvestorPortfSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorPortfSetting(
+            self,
+            pQryInvestorPortfSetting,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryInvestorInfoCommRec(
+        &mut self,
+        pQryInvestorInfoCommRec: *mut CThostFtdcQryInvestorInfoCommRecField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryInvestorInfoCommRec(
+            self,
+            pQryInvestorInfoCommRec,
+            nRequestID,
+        )
+    }
+    #[inline]
+    pub unsafe fn ReqQryCombLeg(
+        &mut self,
+        pQryCombLeg: *mut CThostFtdcQryCombLegField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryCombLeg(self, pQryCombLeg, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqOffsetSetting(
+        &mut self,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqOffsetSetting(self, pInputOffsetSetting, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqCancelOffsetSetting(
+        &mut self,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqCancelOffsetSetting(self, pInputOffsetSetting, nRequestID)
+    }
+    #[inline]
+    pub unsafe fn ReqQryOffsetSetting(
+        &mut self,
+        pQryOffsetSetting: *mut CThostFtdcQryOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        Rust_CThostFtdcTraderApi_ReqQryOffsetSetting(self, pQryOffsetSetting, nRequestID)
     }
     #[inline]
     pub unsafe fn new(member: *mut CThostFtdcTraderApi) -> Self {
@@ -13743,6 +16609,329 @@ extern "C" {
         bIsLast: bool,
     );
 }
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnRspQrySPBMFutureParameterEP34CThostFtdcSPBMFutureParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPBMFutureParameter(
+        this: *mut ::std::os::raw::c_void,
+        pSPBMFutureParameter: *mut CThostFtdcSPBMFutureParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnRspQrySPBMOptionParameterEP34CThostFtdcSPBMOptionParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPBMOptionParameter(
+        this: *mut ::std::os::raw::c_void,
+        pSPBMOptionParameter: *mut CThostFtdcSPBMOptionParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi26OnRspQrySPBMIntraParameterEP33CThostFtdcSPBMIntraParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPBMIntraParameter(
+        this: *mut ::std::os::raw::c_void,
+        pSPBMIntraParameter: *mut CThostFtdcSPBMIntraParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi26OnRspQrySPBMInterParameterEP33CThostFtdcSPBMInterParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPBMInterParameter(
+        this: *mut ::std::os::raw::c_void,
+        pSPBMInterParameter: *mut CThostFtdcSPBMInterParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnRspQrySPBMPortfDefinitionEP34CThostFtdcSPBMPortfDefinitionFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPBMPortfDefinition(
+        this: *mut ::std::os::raw::c_void,
+        pSPBMPortfDefinition: *mut CThostFtdcSPBMPortfDefinitionField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi28OnRspQrySPBMInvestorPortfDefEP35CThostFtdcSPBMInvestorPortfDefFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPBMInvestorPortfDef(
+        this: *mut ::std::os::raw::c_void,
+        pSPBMInvestorPortfDef: *mut CThostFtdcSPBMInvestorPortfDefField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi32OnRspQryInvestorPortfMarginRatioEP39CThostFtdcInvestorPortfMarginRatioFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorPortfMarginRatio(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorPortfMarginRatio: *mut CThostFtdcInvestorPortfMarginRatioField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi30OnRspQryInvestorProdSPBMDetailEP37CThostFtdcInvestorProdSPBMDetailFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorProdSPBMDetail(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorProdSPBMDetail: *mut CThostFtdcInvestorProdSPBMDetailField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi35OnRspQryInvestorCommoditySPMMMarginEP42CThostFtdcInvestorCommoditySPMMMarginFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorCommoditySPMMMargin(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorCommoditySPMMMargin: *mut CThostFtdcInvestorCommoditySPMMMarginField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi40OnRspQryInvestorCommodityGroupSPMMMarginEP47CThostFtdcInvestorCommodityGroupSPMMMarginFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorCommodityGroupSPMMMargin(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorCommodityGroupSPMMMargin: *mut CThostFtdcInvestorCommodityGroupSPMMMarginField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi21OnRspQrySPMMInstParamEP28CThostFtdcSPMMInstParamFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPMMInstParam(
+        this: *mut ::std::os::raw::c_void,
+        pSPMMInstParam: *mut CThostFtdcSPMMInstParamField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi24OnRspQrySPMMProductParamEP31CThostFtdcSPMMProductParamFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPMMProductParam(
+        this: *mut ::std::os::raw::c_void,
+        pSPMMProductParam: *mut CThostFtdcSPMMProductParamField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi31OnRspQrySPBMAddOnInterParameterEP38CThostFtdcSPBMAddOnInterParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQrySPBMAddOnInterParameter(
+        this: *mut ::std::os::raw::c_void,
+        pSPBMAddOnInterParameter: *mut CThostFtdcSPBMAddOnInterParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi28OnRspQryRCAMSCombProductInfoEP35CThostFtdcRCAMSCombProductInfoFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRCAMSCombProductInfo(
+        this: *mut ::std::os::raw::c_void,
+        pRCAMSCombProductInfo: *mut CThostFtdcRCAMSCombProductInfoField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnRspQryRCAMSInstrParameterEP34CThostFtdcRCAMSInstrParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRCAMSInstrParameter(
+        this: *mut ::std::os::raw::c_void,
+        pRCAMSInstrParameter: *mut CThostFtdcRCAMSInstrParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnRspQryRCAMSIntraParameterEP34CThostFtdcRCAMSIntraParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRCAMSIntraParameter(
+        this: *mut ::std::os::raw::c_void,
+        pRCAMSIntraParameter: *mut CThostFtdcRCAMSIntraParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnRspQryRCAMSInterParameterEP34CThostFtdcRCAMSInterParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRCAMSInterParameter(
+        this: *mut ::std::os::raw::c_void,
+        pRCAMSInterParameter: *mut CThostFtdcRCAMSInterParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi32OnRspQryRCAMSShortOptAdjustParamEP39CThostFtdcRCAMSShortOptAdjustParamFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRCAMSShortOptAdjustParam(
+        this: *mut ::std::os::raw::c_void,
+        pRCAMSShortOptAdjustParam: *mut CThostFtdcRCAMSShortOptAdjustParamField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi33OnRspQryRCAMSInvestorCombPositionEP40CThostFtdcRCAMSInvestorCombPositionFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRCAMSInvestorCombPosition(
+        this: *mut ::std::os::raw::c_void,
+        pRCAMSInvestorCombPosition: *mut CThostFtdcRCAMSInvestorCombPositionField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi31OnRspQryInvestorProdRCAMSMarginEP38CThostFtdcInvestorProdRCAMSMarginFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorProdRCAMSMargin(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorProdRCAMSMargin: *mut CThostFtdcInvestorProdRCAMSMarginField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi26OnRspQryRULEInstrParameterEP33CThostFtdcRULEInstrParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRULEInstrParameter(
+        this: *mut ::std::os::raw::c_void,
+        pRULEInstrParameter: *mut CThostFtdcRULEInstrParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi26OnRspQryRULEIntraParameterEP33CThostFtdcRULEIntraParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRULEIntraParameter(
+        this: *mut ::std::os::raw::c_void,
+        pRULEIntraParameter: *mut CThostFtdcRULEIntraParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi26OnRspQryRULEInterParameterEP33CThostFtdcRULEInterParameterFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryRULEInterParameter(
+        this: *mut ::std::os::raw::c_void,
+        pRULEInterParameter: *mut CThostFtdcRULEInterParameterField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi30OnRspQryInvestorProdRULEMarginEP37CThostFtdcInvestorProdRULEMarginFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorProdRULEMargin(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorProdRULEMargin: *mut CThostFtdcInvestorProdRULEMarginField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi28OnRspQryInvestorPortfSettingEP35CThostFtdcInvestorPortfSettingFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorPortfSetting(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorPortfSetting: *mut CThostFtdcInvestorPortfSettingField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnRspQryInvestorInfoCommRecEP34CThostFtdcInvestorInfoCommRecFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryInvestorInfoCommRec(
+        this: *mut ::std::os::raw::c_void,
+        pInvestorInfoCommRec: *mut CThostFtdcInvestorInfoCommRecField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi15OnRspQryCombLegEP22CThostFtdcCombLegFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryCombLeg(
+        this: *mut ::std::os::raw::c_void,
+        pCombLeg: *mut CThostFtdcCombLegField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi18OnRspOffsetSettingEP33CThostFtdcInputOffsetSettingFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspOffsetSetting(
+        this: *mut ::std::os::raw::c_void,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi24OnRspCancelOffsetSettingEP33CThostFtdcInputOffsetSettingFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspCancelOffsetSetting(
+        this: *mut ::std::os::raw::c_void,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi18OnRtnOffsetSettingEP28CThostFtdcOffsetSettingField"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRtnOffsetSetting(
+        this: *mut ::std::os::raw::c_void,
+        pOffsetSetting: *mut CThostFtdcOffsetSettingField,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi21OnErrRtnOffsetSettingEP33CThostFtdcInputOffsetSettingFieldP22CThostFtdcRspInfoField"]
+    pub fn Rust_CThostFtdcTraderSpi_OnErrRtnOffsetSetting(
+        this: *mut ::std::os::raw::c_void,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi27OnErrRtnCancelOffsetSettingEP34CThostFtdcCancelOffsetSettingFieldP22CThostFtdcRspInfoField"]
+    pub fn Rust_CThostFtdcTraderSpi_OnErrRtnCancelOffsetSetting(
+        this: *mut ::std::os::raw::c_void,
+        pCancelOffsetSetting: *mut CThostFtdcCancelOffsetSettingField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24Rust_CThostFtdcTraderSpi21OnRspQryOffsetSettingEP28CThostFtdcOffsetSettingFieldP22CThostFtdcRspInfoFieldib"]
+    pub fn Rust_CThostFtdcTraderSpi_OnRspQryOffsetSetting(
+        this: *mut ::std::os::raw::c_void,
+        pOffsetSetting: *mut CThostFtdcOffsetSettingField,
+        pRspInfo: *mut CThostFtdcRspInfoField,
+        nRequestID: ::std::os::raw::c_int,
+        bIsLast: bool,
+    );
+}
 #[allow(unused)]
 pub trait Rust_CThostFtdcMdSpi_Trait {
     fn on_front_connected(&mut self) {  }
@@ -13989,6 +17178,39 @@ pub trait Rust_CThostFtdcTraderSpi_Trait {
     fn on_rsp_qry_comb_promotion_param(&mut self, pCombPromotionParam: *mut CThostFtdcCombPromotionParamField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
     fn on_rsp_qry_risk_settle_invst_position(&mut self, pRiskSettleInvstPosition: *mut CThostFtdcRiskSettleInvstPositionField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
     fn on_rsp_qry_risk_settle_product_status(&mut self, pRiskSettleProductStatus: *mut CThostFtdcRiskSettleProductStatusField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spbm_future_parameter(&mut self, pSPBMFutureParameter: *mut CThostFtdcSPBMFutureParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spbm_option_parameter(&mut self, pSPBMOptionParameter: *mut CThostFtdcSPBMOptionParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spbm_intra_parameter(&mut self, pSPBMIntraParameter: *mut CThostFtdcSPBMIntraParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spbm_inter_parameter(&mut self, pSPBMInterParameter: *mut CThostFtdcSPBMInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spbm_portf_definition(&mut self, pSPBMPortfDefinition: *mut CThostFtdcSPBMPortfDefinitionField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spbm_investor_portf_def(&mut self, pSPBMInvestorPortfDef: *mut CThostFtdcSPBMInvestorPortfDefField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_portf_margin_ratio(&mut self, pInvestorPortfMarginRatio: *mut CThostFtdcInvestorPortfMarginRatioField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_prod_spbm_detail(&mut self, pInvestorProdSPBMDetail: *mut CThostFtdcInvestorProdSPBMDetailField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_commodity_spmm_margin(&mut self, pInvestorCommoditySPMMMargin: *mut CThostFtdcInvestorCommoditySPMMMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_commodity_group_spmm_margin(&mut self, pInvestorCommodityGroupSPMMMargin: *mut CThostFtdcInvestorCommodityGroupSPMMMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spmm_inst_param(&mut self, pSPMMInstParam: *mut CThostFtdcSPMMInstParamField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spmm_product_param(&mut self, pSPMMProductParam: *mut CThostFtdcSPMMProductParamField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_spbm_add_on_inter_parameter(&mut self, pSPBMAddOnInterParameter: *mut CThostFtdcSPBMAddOnInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rcams_comb_product_info(&mut self, pRCAMSCombProductInfo: *mut CThostFtdcRCAMSCombProductInfoField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rcams_instr_parameter(&mut self, pRCAMSInstrParameter: *mut CThostFtdcRCAMSInstrParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rcams_intra_parameter(&mut self, pRCAMSIntraParameter: *mut CThostFtdcRCAMSIntraParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rcams_inter_parameter(&mut self, pRCAMSInterParameter: *mut CThostFtdcRCAMSInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rcams_short_opt_adjust_param(&mut self, pRCAMSShortOptAdjustParam: *mut CThostFtdcRCAMSShortOptAdjustParamField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rcams_investor_comb_position(&mut self, pRCAMSInvestorCombPosition: *mut CThostFtdcRCAMSInvestorCombPositionField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_prod_rcams_margin(&mut self, pInvestorProdRCAMSMargin: *mut CThostFtdcInvestorProdRCAMSMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rule_instr_parameter(&mut self, pRULEInstrParameter: *mut CThostFtdcRULEInstrParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rule_intra_parameter(&mut self, pRULEIntraParameter: *mut CThostFtdcRULEIntraParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_rule_inter_parameter(&mut self, pRULEInterParameter: *mut CThostFtdcRULEInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_prod_rule_margin(&mut self, pInvestorProdRULEMargin: *mut CThostFtdcInvestorProdRULEMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_portf_setting(&mut self, pInvestorPortfSetting: *mut CThostFtdcInvestorPortfSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_investor_info_comm_rec(&mut self, pInvestorInfoCommRec: *mut CThostFtdcInvestorInfoCommRecField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_qry_comb_leg(&mut self, pCombLeg: *mut CThostFtdcCombLegField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_offset_setting(&mut self, pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rsp_cancel_offset_setting(&mut self, pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
+    fn on_rtn_offset_setting(&mut self, pOffsetSetting: *mut CThostFtdcOffsetSettingField) {  }
+    fn on_err_rtn_offset_setting(&mut self, pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField) {  }
+    fn on_err_rtn_cancel_offset_setting(&mut self, pCancelOffsetSetting: *mut CThostFtdcCancelOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField) {  }
+    fn on_rsp_qry_offset_setting(&mut self, pOffsetSetting: *mut CThostFtdcOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {  }
 }
 
 #[no_mangle]
@@ -14899,6 +18121,237 @@ pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRiskSettleProductStatus
     let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
     let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
     trait_obj.on_rsp_qry_risk_settle_product_status(pRiskSettleProductStatus, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPBMFutureParameter(trait_obj: *mut ::std::os::raw::c_void, pSPBMFutureParameter: *mut CThostFtdcSPBMFutureParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spbm_future_parameter(pSPBMFutureParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPBMOptionParameter(trait_obj: *mut ::std::os::raw::c_void, pSPBMOptionParameter: *mut CThostFtdcSPBMOptionParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spbm_option_parameter(pSPBMOptionParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPBMIntraParameter(trait_obj: *mut ::std::os::raw::c_void, pSPBMIntraParameter: *mut CThostFtdcSPBMIntraParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spbm_intra_parameter(pSPBMIntraParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPBMInterParameter(trait_obj: *mut ::std::os::raw::c_void, pSPBMInterParameter: *mut CThostFtdcSPBMInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spbm_inter_parameter(pSPBMInterParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPBMPortfDefinition(trait_obj: *mut ::std::os::raw::c_void, pSPBMPortfDefinition: *mut CThostFtdcSPBMPortfDefinitionField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spbm_portf_definition(pSPBMPortfDefinition, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPBMInvestorPortfDef(trait_obj: *mut ::std::os::raw::c_void, pSPBMInvestorPortfDef: *mut CThostFtdcSPBMInvestorPortfDefField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spbm_investor_portf_def(pSPBMInvestorPortfDef, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorPortfMarginRatio(trait_obj: *mut ::std::os::raw::c_void, pInvestorPortfMarginRatio: *mut CThostFtdcInvestorPortfMarginRatioField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_portf_margin_ratio(pInvestorPortfMarginRatio, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorProdSPBMDetail(trait_obj: *mut ::std::os::raw::c_void, pInvestorProdSPBMDetail: *mut CThostFtdcInvestorProdSPBMDetailField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_prod_spbm_detail(pInvestorProdSPBMDetail, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorCommoditySPMMMargin(trait_obj: *mut ::std::os::raw::c_void, pInvestorCommoditySPMMMargin: *mut CThostFtdcInvestorCommoditySPMMMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_commodity_spmm_margin(pInvestorCommoditySPMMMargin, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorCommodityGroupSPMMMargin(trait_obj: *mut ::std::os::raw::c_void, pInvestorCommodityGroupSPMMMargin: *mut CThostFtdcInvestorCommodityGroupSPMMMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_commodity_group_spmm_margin(pInvestorCommodityGroupSPMMMargin, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPMMInstParam(trait_obj: *mut ::std::os::raw::c_void, pSPMMInstParam: *mut CThostFtdcSPMMInstParamField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spmm_inst_param(pSPMMInstParam, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPMMProductParam(trait_obj: *mut ::std::os::raw::c_void, pSPMMProductParam: *mut CThostFtdcSPMMProductParamField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spmm_product_param(pSPMMProductParam, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQrySPBMAddOnInterParameter(trait_obj: *mut ::std::os::raw::c_void, pSPBMAddOnInterParameter: *mut CThostFtdcSPBMAddOnInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_spbm_add_on_inter_parameter(pSPBMAddOnInterParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRCAMSCombProductInfo(trait_obj: *mut ::std::os::raw::c_void, pRCAMSCombProductInfo: *mut CThostFtdcRCAMSCombProductInfoField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rcams_comb_product_info(pRCAMSCombProductInfo, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRCAMSInstrParameter(trait_obj: *mut ::std::os::raw::c_void, pRCAMSInstrParameter: *mut CThostFtdcRCAMSInstrParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rcams_instr_parameter(pRCAMSInstrParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRCAMSIntraParameter(trait_obj: *mut ::std::os::raw::c_void, pRCAMSIntraParameter: *mut CThostFtdcRCAMSIntraParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rcams_intra_parameter(pRCAMSIntraParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRCAMSInterParameter(trait_obj: *mut ::std::os::raw::c_void, pRCAMSInterParameter: *mut CThostFtdcRCAMSInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rcams_inter_parameter(pRCAMSInterParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRCAMSShortOptAdjustParam(trait_obj: *mut ::std::os::raw::c_void, pRCAMSShortOptAdjustParam: *mut CThostFtdcRCAMSShortOptAdjustParamField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rcams_short_opt_adjust_param(pRCAMSShortOptAdjustParam, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRCAMSInvestorCombPosition(trait_obj: *mut ::std::os::raw::c_void, pRCAMSInvestorCombPosition: *mut CThostFtdcRCAMSInvestorCombPositionField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rcams_investor_comb_position(pRCAMSInvestorCombPosition, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorProdRCAMSMargin(trait_obj: *mut ::std::os::raw::c_void, pInvestorProdRCAMSMargin: *mut CThostFtdcInvestorProdRCAMSMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_prod_rcams_margin(pInvestorProdRCAMSMargin, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRULEInstrParameter(trait_obj: *mut ::std::os::raw::c_void, pRULEInstrParameter: *mut CThostFtdcRULEInstrParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rule_instr_parameter(pRULEInstrParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRULEIntraParameter(trait_obj: *mut ::std::os::raw::c_void, pRULEIntraParameter: *mut CThostFtdcRULEIntraParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rule_intra_parameter(pRULEIntraParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryRULEInterParameter(trait_obj: *mut ::std::os::raw::c_void, pRULEInterParameter: *mut CThostFtdcRULEInterParameterField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_rule_inter_parameter(pRULEInterParameter, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorProdRULEMargin(trait_obj: *mut ::std::os::raw::c_void, pInvestorProdRULEMargin: *mut CThostFtdcInvestorProdRULEMarginField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_prod_rule_margin(pInvestorProdRULEMargin, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorPortfSetting(trait_obj: *mut ::std::os::raw::c_void, pInvestorPortfSetting: *mut CThostFtdcInvestorPortfSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_portf_setting(pInvestorPortfSetting, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryInvestorInfoCommRec(trait_obj: *mut ::std::os::raw::c_void, pInvestorInfoCommRec: *mut CThostFtdcInvestorInfoCommRecField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_investor_info_comm_rec(pInvestorInfoCommRec, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryCombLeg(trait_obj: *mut ::std::os::raw::c_void, pCombLeg: *mut CThostFtdcCombLegField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_comb_leg(pCombLeg, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspOffsetSetting(trait_obj: *mut ::std::os::raw::c_void, pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_offset_setting(pInputOffsetSetting, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspCancelOffsetSetting(trait_obj: *mut ::std::os::raw::c_void, pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_cancel_offset_setting(pInputOffsetSetting, pRspInfo, nRequestID, bIsLast)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRtnOffsetSetting(trait_obj: *mut ::std::os::raw::c_void, pOffsetSetting: *mut CThostFtdcOffsetSettingField) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rtn_offset_setting(pOffsetSetting)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnErrRtnOffsetSetting(trait_obj: *mut ::std::os::raw::c_void, pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_err_rtn_offset_setting(pInputOffsetSetting, pRspInfo)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnErrRtnCancelOffsetSetting(trait_obj: *mut ::std::os::raw::c_void, pCancelOffsetSetting: *mut CThostFtdcCancelOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_err_rtn_cancel_offset_setting(pCancelOffsetSetting, pRspInfo)
+}
+
+#[no_mangle]
+pub extern "C" fn Rust_CThostFtdcTraderSpi_Trait_OnRspQryOffsetSetting(trait_obj: *mut ::std::os::raw::c_void, pOffsetSetting: *mut CThostFtdcOffsetSettingField, pRspInfo: *mut CThostFtdcRspInfoField, nRequestID: ::std::os::raw::c_int, bIsLast: bool) {
+    let trait_obj = trait_obj as *mut Box<dyn Rust_CThostFtdcTraderSpi_Trait>;
+    let trait_obj: &mut dyn Rust_CThostFtdcTraderSpi_Trait = unsafe { &mut **trait_obj };
+    trait_obj.on_rsp_qry_offset_setting(pOffsetSetting, pRspInfo, nRequestID, bIsLast)
 }
 
 #[no_mangle]
