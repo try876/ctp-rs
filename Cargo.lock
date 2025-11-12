@@ -182,7 +182,7 @@ dependencies = [
 
 [[package]]
 name = "ctp_rs"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "bindgen",
  "cc",
