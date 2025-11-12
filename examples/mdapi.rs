@@ -156,9 +156,10 @@ impl MDApi {
             ProtocolInfo: Default::default(),
             MacAddress: Default::default(),
             OneTimePassword: [0i8; 41],
-            ClientIPAddress: Default::default(),
+            ClientIPAddress: [0i8; 33],
             LoginRemark: [0i8; 36],
             ClientIPPort: Default::default(),
+            reserve1: Default::default(),
         };
 
         unsafe {
